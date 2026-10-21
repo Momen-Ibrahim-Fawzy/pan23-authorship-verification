@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+.env
+
+# PAN data, LLM caches, checkpoints and outputs are never committed
+/data/
+/runs/
+/results/
+*.pt
+*.bin
+*.safetensors
+/checkpoints/

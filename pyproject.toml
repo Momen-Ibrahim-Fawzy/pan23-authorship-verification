@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "av-sbert"
+version = "1.0.0"
+description = "Cross-discourse authorship verification with Sentence-Transformers (1st place, PAN@CLEF 2023)"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Momen Ibrahim Fawzy" }]
+dependencies = ["numpy", "pandas", "pyyaml", "tqdm"]
+
+[project.optional-dependencies]
+model = ["torch>=1.13", "sentence-transformers>=2.2", "nltk"]
+stylometric = ["scikit-learn>=1.1", "scipy"]
+dev = ["pytest"]
+
+[project.scripts]
+av-predict = "av_sbert.cli:predict_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
