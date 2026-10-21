@@ -1,0 +1,17 @@
+# Submitted configuration (paper, Section 5.3)
+model: sentence-transformers/all-MiniLM-L12-v2
+output_dir: runs/all-MiniLM-L12-v2
+chunk_len: 256          # = the model's max sequence length
+batch_size: 32
+epochs: 189
+learning_rate: 2.0e-5
+eps: 1.0e-6
+scheduler: WarmupLinear
+warmup_steps: 0
+eval_every: 1
+eval_batch_size: 64
+seed: 42
+
+data:
+  train: data/prepared/train.jsonl
+  val: data/prepared/val.jsonl
